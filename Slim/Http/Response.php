@@ -208,7 +208,7 @@ class Response extends Message implements ResponseInterface
      */
     protected function filterStatus($status)
     {
-        if (!is_integer($status) || $status<100 || $status>599) {
+        if (!is_integer((int)$status) || $status<100 || $status>599) {
             throw new InvalidArgumentException('Invalid HTTP status code');
         }
 
